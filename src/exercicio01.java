@@ -44,6 +44,9 @@ public class exercicio01 {
             aux = letra[i];
             letra[i] = letra[j];
             letra[j] = aux;
+            j--;
         }
+        return new String(letra);
+
     }
 }
