@@ -30,7 +30,7 @@ public class exercicio01 {
 
             for (int i = j + 1; i < palavra.length; i ++) {
                 if (inverso.equalsIgnoreCase(palavra[i])){
-                    System.out.println("(" + inverso + "," + palavra[i] + ")");
+                    System.out.println("(" + palavra[j] + "," + palavra[i] + ")");
                 }
             }
         }
