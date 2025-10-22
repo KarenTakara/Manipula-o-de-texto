@@ -25,14 +25,21 @@ public class exercicio01 {
 
     public static void localizarPar(String[] palavra) {
         String inverso;
+        boolean achou = false;
+
         for (int j = 0; j < palavra.length; j++) {
             inverso = inverter(palavra[j]);
 
             for (int i = j + 1; i < palavra.length; i ++) {
                 if (inverso.equalsIgnoreCase(palavra[i])){
                     System.out.println("(" + palavra[j] + "," + palavra[i] + ")");
+                    achou = true;
                 }
             }
+        }
+
+        if (achou == false) {
+            System.out.println("Não há pares de inverso");
         }
     }
 
