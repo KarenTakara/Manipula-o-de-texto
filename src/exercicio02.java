@@ -36,12 +36,25 @@ public class exercicio02 {
         int aux;
         char ch;
         int desloc = deslocamento % 26;     // se o deslocamento for menor que 26, o valor continua sendo o mesmo do deslocamento
-        palavra = palavra.toLowerCase();
+        //palavra = palavra.toLowerCase();    //converter para minusculo
+
 
         for (int i = 0; i < palavra.length(); i++){
             ch = palavra.charAt(i);
-            aux = ch - 'a';
-            cripto += (char) ('a' + (aux + deslocamento) % 25);
+
+            if (ch > 'a' && ch <= 'z'){            //leta minusculo
+                aux = ch - 'a';
+                cripto += (char) ('a' + (aux + deslocamento) % 25);
+            }
+
+            else if (ch >= 'A' && ch <= 'Z'){       //letra maiuscula
+                aux = ch - 'A';
+                cripto += (char) ('A' + (aux + deslocamento) % 25);
+            }
+
+            else {
+                cripto += ch;
+            }
         }
         return cripto;
     }
