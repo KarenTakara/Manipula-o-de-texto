@@ -34,12 +34,14 @@ public class exercicio02 {
     public static String rotacionar(String palavra, int deslocamento){
         String cripto = "";
         int aux;
+        char ch;
+        int desloc = deslocamento % 26;     // se o deslocamento for menor que 26, o valor continua sendo o mesmo do deslocamento
         palavra = palavra.toLowerCase();
 
         for (int i = 0; i < palavra.length(); i++){
-            aux = palavra.charAt(i);
-            aux += deslocamento;
-            cripto += (char)aux;
+            ch = palavra.charAt(i);
+            aux = ch - 'a';
+            cripto += (char) ('a' + (aux + deslocamento) % 25);
         }
         return cripto;
     }
